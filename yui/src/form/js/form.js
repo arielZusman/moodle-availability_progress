@@ -23,7 +23,7 @@ M.availability_progress.form.getNode = function(json) {
     // Set initial values based on the value from the JSON data in Moodle
     // database. This will have values undefined if creating a new one.
     if (json.allow) {
-        node.one('input').set('checked', true);
+        node.one('input').set('value', 70);
     }
  
     // Add event handlers (first time only). You can do this any way you
@@ -48,8 +48,8 @@ M.availability_progress.form.fillValue = function(value, node) {
     // to use within the JSON data in the form. Should be compatible
     // with the structure used in the __construct and save functions
     // within condition.php.
-    var checkbox = node.one('input');
-    value.allow = checkbox.get('checked') ? true : false;
+    var progress = node.one('input');
+    value.allow = progress.get('value');
 };
  
 M.availability_progress.form.fillErrors = function(errors, node) {
