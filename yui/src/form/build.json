@@ -1,0 +1,10 @@
+{
+  "name": "moodle-availability_progress-form",
+  "builds": {
+    "moodle-availability_progress-form": {
+      "jsfiles": [
+        "form.js"
+      ]
+    }
+  }
+}
