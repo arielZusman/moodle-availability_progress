@@ -55,13 +55,13 @@ class condition extends \core_availability\condition {
 
     public function is_available($not, \core_availability\info $info, $grabthelot, $userid) {
         $allow = (int)$this->allow;
-
-        $progress = $this->get_progress($info->get_course(), $userid);        
+        $progress = $this->get_progress($info->get_course(), $userid);                
         
-        die();
+        $allow = ($progress >= $allow) ? true : false;
         if ($not) {
             $allow = !$allow;
         }
+        
         return $allow;
     }
 

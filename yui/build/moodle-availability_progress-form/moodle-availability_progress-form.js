@@ -25,7 +25,7 @@ M.availability_progress.form.getNode = function(json) {
     // Set initial values based on the value from the JSON data in Moodle
     // database. This will have values undefined if creating a new one.
     if (json.allow) {
-        node.one('input').set('value', 70);
+        node.one('input').set('value', json.allow);
     }
  
     // Add event handlers (first time only). You can do this any way you
@@ -33,7 +33,7 @@ M.availability_progress.form.getNode = function(json) {
     if (!M.availability_progress.form.addedEvents) {
         M.availability_progress.form.addedEvents = true;
         var root = Y.one('.availability-field');
-        root.delegate('click', function() {
+        root.delegate('change', function() {
             // The key point is this update call. This call will update
             // the JSON data in the hidden field in the form, so that it
             // includes the new value of the checkbox.
